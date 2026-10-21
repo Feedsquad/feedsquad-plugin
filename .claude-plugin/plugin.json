@@ -1,5 +1,6 @@
 {
   "name": "feedsquad",
+  "displayName": "FeedSquad",
   "version": "1.2.1",
   "description": "Write social posts with FeedSquad and schedule the ones you approve. Skills cover a first post, a weekly plan, campaigns, backlog cleanup, AI tell checks and repurposing.",
   "author": {
@@ -8,6 +9,7 @@
     "url": "https://feedsquad.com"
   },
   "homepage": "https://feedsquad.com/mcp",
+  "repository": "https://github.com/Feedsquad/feedsquad-plugin",
   "license": "MIT",
   "keywords": [
     "social-media",
