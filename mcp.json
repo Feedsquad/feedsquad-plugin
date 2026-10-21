@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "feedsquad": {
+      "type": "streamable-http",
+      "url": "https://feedsquad.com/api/mcp/chatgpt"
+    }
+  }
+}

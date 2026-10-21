@@ -1,0 +1,54 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "feedsquad",
+  "version": "1.2.1",
+  "description": "Write social posts with FeedSquad and schedule the ones you approve. Skills cover a first post, a weekly plan, campaigns, backlog cleanup, AI tell checks and repurposing.",
+  "author": {
+    "name": "Herman Foundry Oy",
+    "email": "hello@feedsquad.com",
+    "url": "https://feedsquad.com"
+  },
+  "homepage": "https://feedsquad.com/mcp",
+  "license": "MIT",
+  "keywords": [
+    "social-media",
+    "linkedin",
+    "x",
+    "threads",
+    "content-calendar",
+    "scheduling",
+    "brand-voice",
+    "ai-tells"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/setup/SKILL.md",
+      "interface": {
+        "displayName": "FeedSquad",
+        "shortDescription": "Plan and schedule social posts",
+        "longDescription": "FeedSquad keeps your social calendar and publishes the posts you approve. Ask it to plan your week, or to write a campaign around one theme. It drafts with you in your own words. Each draft is checked for patterns that read as machine-written. Everything is saved as a draft first, and nothing is scheduled or published until you say yes. When drafts pile up, FeedSquad shows what it would archive before it archives anything. Archived drafts can be restored from your FeedSquad dashboard. You can connect LinkedIn, X and Threads accounts.",
+        "developerName": "Herman Foundry Oy",
+        "category": "Productivity",
+        "capabilities": [
+          "Draft posts with you",
+          "Plan your posting week",
+          "Schedule posts you approve",
+          "Check drafts for AI tells",
+          "Archive old drafts"
+        ],
+        "websiteURL": "https://feedsquad.com/mcp",
+        "supportURL": "https://feedsquad.com/docs/faq",
+        "privacyPolicyURL": "https://feedsquad.com/privacy",
+        "termsOfServiceURL": "https://feedsquad.com/terms",
+        "defaultPrompt": [
+          "Help me write my first post",
+          "Plan my posts for next week",
+          "Check this draft for AI tells"
+        ],
+        "brandColor": "#4A7BF7",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}
