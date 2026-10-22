@@ -1,7 +1,7 @@
 {
   "name": "feedsquad",
   "displayName": "FeedSquad",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "Write social posts with FeedSquad and schedule the ones you approve. Skills cover a first post, a weekly plan, campaigns, backlog cleanup, AI tell checks and repurposing.",
   "author": {
     "name": "Herman Foundry Oy",
