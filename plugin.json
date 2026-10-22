@@ -1,11 +1,11 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "feedsquad",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Write social posts with FeedSquad and schedule the ones you approve. Skills cover a first post, a weekly plan, campaigns, backlog cleanup, AI tell checks and repurposing.",
   "author": {
     "name": "Herman Foundry Oy",
-    "email": "hello@feedsquad.com",
+    "email": "support@feedsquad.com",
     "url": "https://feedsquad.com"
   },
   "homepage": "https://feedsquad.com/mcp",
@@ -38,7 +38,7 @@
           "Archive old drafts"
         ],
         "websiteURL": "https://feedsquad.com/mcp",
-        "supportURL": "https://feedsquad.com/docs/faq",
+        "supportURL": "https://feedsquad.com/docs/mcp#support",
         "privacyPolicyURL": "https://feedsquad.com/privacy",
         "termsOfServiceURL": "https://feedsquad.com/terms",
         "defaultPrompt": [

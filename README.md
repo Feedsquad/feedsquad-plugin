@@ -19,6 +19,8 @@ A FeedSquad account. Connect it the first time a skill uses FeedSquad, through t
 
 ## Support
 
+- Email: support@feedsquad.com (include your AI client and, if you have it, the `x-mcp-request-id` from the response)
+- Support page: https://feedsquad.com/docs/mcp#support
 - Docs: https://feedsquad.com/docs/mcp
 - Help: https://feedsquad.com/docs/faq
 - Privacy: https://feedsquad.com/privacy
