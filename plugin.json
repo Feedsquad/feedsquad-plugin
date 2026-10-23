@@ -29,7 +29,7 @@
         "shortDescription": "Plan and schedule social posts",
         "longDescription": "FeedSquad keeps your social calendar and publishes the posts you approve. Ask it to plan your week, or to write a campaign around one theme. It drafts with you in your own words. Each draft is checked for patterns that read as machine-written. Everything is saved as a draft first, and nothing is scheduled or published until you say yes. When drafts pile up, FeedSquad shows what it would archive before it archives anything. Archived drafts can be restored from your FeedSquad dashboard. You can connect LinkedIn, X and Threads accounts.",
         "developerName": "Herman Foundry Oy",
-        "category": "Productivity",
+        "category": "Communication",
         "capabilities": [
           "Draft posts with you",
           "Plan your posting week",
