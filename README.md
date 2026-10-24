@@ -1,12 +1,12 @@
 # FeedSquad
 
-FeedSquad keeps your social calendar for LinkedIn, X and Threads, and publishes the posts you approve. This plugin connects Claude to your FeedSquad account and adds six skills: write a first post, plan your week, write a campaign, clear an old draft backlog, check a draft for AI tells, and repurpose a post for another platform.
+FeedSquad keeps your social calendar for LinkedIn, X and Threads, and publishes the posts you approve. This plugin connects Claude, ChatGPT or Cursor to your FeedSquad account and adds six skills: write a first post, plan your week, write a campaign, clear an old draft backlog, check a draft for AI tells, and repurpose a post for another platform.
 
 Everything starts as a draft. Nothing is scheduled or published until you say yes.
 
 ## What you need
 
-A FeedSquad account. Connect it the first time a skill uses FeedSquad, through the sign-in screen Claude opens.
+A FeedSquad account. Connect it the first time a skill uses FeedSquad, through the sign-in screen your AI client opens.
 
 ## What's inside
 
@@ -14,6 +14,7 @@ A FeedSquad account. Connect it the first time a skill uses FeedSquad, through t
 |---|---|
 | `.claude-plugin/plugin.json` | Plugin manifest for Claude, with the FeedSquad MCP server |
 | `plugin.json`, `mcp.json` | The same plugin for the ChatGPT plugin directory |
+| `.cursor-plugin/` | The same plugin for the Cursor marketplace, on the server at `https://feedsquad.com/api/mcp` |
 | `skills/` | The six skills |
 | `assets/` | Icons |
 

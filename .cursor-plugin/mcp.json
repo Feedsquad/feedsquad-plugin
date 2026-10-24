@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "feedsquad": {
+      "type": "http",
+      "url": "https://feedsquad.com/api/mcp",
+      "placement": "server"
+    }
+  }
+}
