@@ -1,0 +1,58 @@
+# Publishes FeedSquad's MCP Registry record (com.feedsquad/feedsquad) to
+# registry.modelcontextprotocol.io. The record is the one FeedSquad serves at
+# https://feedsquad.com/server.json (public/server.json in the app repo), so
+# it always matches the live server. Run it by hand after an MCP version bump:
+# Actions -> Publish to MCP Registry -> Run workflow.
+#
+# Sign-in uses the com.feedsquad domain key (HTTP method: the public half is at
+# https://feedsquad.com/.well-known/mcp-registry-auth). The private half lives
+# only in the repository secret MCP_REGISTRY_PRIVATE_KEY (hex).
+name: Publish to MCP Registry
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mcp-registry-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PUBLISHER_VERSION: v1.8.7
+    steps:
+      - name: Install mcp-publisher
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/download/${PUBLISHER_VERSION}/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+          ./mcp-publisher --help > /dev/null
+
+      - name: Fetch the live record
+        run: |
+          curl -fsSL -A "feedsquad-registry-publish" https://feedsquad.com/server.json -o server.json
+          grep -E '"(name|version)"' server.json | head -2
+
+      - name: Validate
+        run: ./mcp-publisher validate server.json
+
+      - name: Sign in with the domain key
+        env:
+          MCP_REGISTRY_PRIVATE_KEY: ${{ secrets.MCP_REGISTRY_PRIVATE_KEY }}
+        run: |
+          if [ -z "$MCP_REGISTRY_PRIVATE_KEY" ]; then
+            echo "::error::The repository secret MCP_REGISTRY_PRIVATE_KEY is not set."
+            exit 1
+          fi
+          ./mcp-publisher login http --domain feedsquad.com --private-key "$MCP_REGISTRY_PRIVATE_KEY"
+
+      - name: Publish
+        run: ./mcp-publisher publish server.json
+
+      - name: Check the registry
+        run: |
+          sleep 5
+          curl -fsSL "https://registry.modelcontextprotocol.io/v0/servers?search=com.feedsquad/feedsquad" | grep -o '"version":"[^"]*"' | head -3
